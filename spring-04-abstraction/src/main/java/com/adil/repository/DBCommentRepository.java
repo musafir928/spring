@@ -1,7 +1,9 @@
 package com.adil.repository;
 
 import com.adil.model.Comment;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DBCommentRepository implements CommentRepository{
 
     @Override
