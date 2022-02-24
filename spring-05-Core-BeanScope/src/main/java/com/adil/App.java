@@ -10,13 +10,24 @@ public class App {
     public static void main(String[] args) {
         Comment comment = new Comment();
         comment.setAuthor("Adil");
-        comment.setText("Spring framework...");
+        comment.setText("bean scope...");
 
         ApplicationContext context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        CommentService commentService = context.getBean(CommentService.class);
+        // ========= default scope is singleton ======//
+        // CommentService cs1 = context.getBean(CommentService.class);
+        // CommentService cs2 = context.getBean(CommentService.class);
+        // ==========  end of singleton ============//
 
-        commentService.publishComment(comment);
+        // ========= prototype scope ======//
+        CommentService cs1 = context.getBean(CommentService.class);
+        CommentService cs2 = context.getBean(CommentService.class);
+        // ==========  end of prototype ============//
+
+        System.out.println(cs1);
+        System.out.println(cs2);
+        System.out.println(cs1 == cs2);
+
     }
 
 }
