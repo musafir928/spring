@@ -9,4 +9,9 @@ public class HomeController {
     public String index() {
         return "home.html";
     }
+
+    @RequestMapping("/welcome")
+    public String welcome() {
+        return "welcome.html";
+    }
 }
