@@ -5,7 +5,10 @@
     <title>Student home page</title>
 </head>
 <body>
-<h1 th:text="${course}"></h1>
-<h1 th:text="${name}"></h1>
+    <h1 th:text="${course}"></h1>
+    <h1 th:text="${name}"></h1>
+    <ul th:each="id: ${studentIds}">
+        <li th:text="${id}"></li>
+    </ul>
 </body>
 </html>
