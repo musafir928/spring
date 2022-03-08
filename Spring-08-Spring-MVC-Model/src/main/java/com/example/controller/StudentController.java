@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Random;
 
 @Controller
+@RequestMapping("/student")
 public class StudentController {
     @RequestMapping("/welcome")
     public String homePage(Model model) {
