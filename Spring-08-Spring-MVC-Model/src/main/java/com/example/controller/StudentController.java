@@ -1,10 +1,14 @@
-package com.example.springModel.controller;
+package com.example.controller;
 
+import com.example.model.Gender;
+import com.example.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 @Controller
 public class StudentController {
@@ -15,8 +19,10 @@ public class StudentController {
         Random random = new Random();
         model.addAttribute(
                 "studentIds",
-                Arrays.asList(random.nextInt(),random.nextInt(),random.nextInt(),random.nextInt())
+                Arrays.asList(random.nextInt(), random.nextInt(), random.nextInt(), random.nextInt())
         );
+
+
         return "student/welcome";
     }
 }

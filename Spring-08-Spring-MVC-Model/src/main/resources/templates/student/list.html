@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student home page</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            width: 200px;
+            background-color: #96D4D4;
+        }
+    </style>
+</head>
+<body>
+<h1> Students list</h1>
+<table>
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+        <th th:text="${student.firstName}"></th>
+        <th th:text="${student.lastName}"></th>
+        <th th:text="${student.age}"></th>
+        <th th:text="${student.gender}"></th>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

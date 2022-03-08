@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Student home page</title>
+    <style>
+        table, th, td {
+            border: 1px solid white;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            width: 200px;
+            background-color: #96D4D4;
+        }
+    </style>
 </head>
 <body>
-    <h1 th:text="${course}"></h1>
-    <h1 th:text="${name}"></h1>
-    <ul th:each="id: ${studentIds}">
-        <li th:text="${id}"></li>
-    </ul>
+<h1 th:text="${course}"></h1>
+<h1 th:text="${name}"></h1>
+<a href="/students"> go to students list</a>
 </body>
 </html>
