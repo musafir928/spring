@@ -22,7 +22,7 @@ public class Employee extends BaseEntity {
     private Integer salary;
 
     @ManyToOne
-    @JoinColumn(name = "department_department")
+    @JoinColumn(name = "department")
     private Department department;
 
     @ManyToOne
