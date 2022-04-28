@@ -1,5 +1,6 @@
 package com.adil.bootstrap;
 
+import com.adil.repository.DepartmentRepository;
 import com.adil.repository.RegionRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -8,9 +9,11 @@ import org.springframework.stereotype.Component;
 public class DataGenerator implements CommandLineRunner {
 
     RegionRepository regionRepository;
+    DepartmentRepository departmentRepository;
 
-    public DataGenerator(RegionRepository regionRepository) {
+    public DataGenerator(RegionRepository regionRepository, DepartmentRepository departmentRepository) {
         this.regionRepository = regionRepository;
+        this.departmentRepository = departmentRepository;
     }
 
     @Override
