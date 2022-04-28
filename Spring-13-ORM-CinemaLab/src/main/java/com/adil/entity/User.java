@@ -3,21 +3,19 @@ package com.adil.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class UserAccount extends BaseEntity {
+@Table(name = "user_account")
+public class User extends BaseEntity {
     private String email;
     private String password;
     private String username;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "account_details_id")
     private Account account;
 }
