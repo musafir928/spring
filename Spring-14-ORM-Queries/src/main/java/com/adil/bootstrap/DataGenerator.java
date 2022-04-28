@@ -19,5 +19,6 @@ public class DataGenerator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         regionRepository.findByCountry("Canada").forEach(System.out::println);
+        departmentRepository.findByDivisionIsNotNull().forEach(System.out::println);
     }
 }

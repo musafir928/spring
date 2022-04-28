@@ -7,10 +7,14 @@ import java.util.List;
 
 public interface DepartmentRepository extends JpaRepository<Department, String> {
 
-    // find all departments
+    //Display all Departments in the furniture department
     List<Department> findByDepartment(String department);
 
-    // find all departments by division
-    List<Department> findByDivisionIs(String division);
+    //Display all Departments with not null division
+    List<Department> findByDivisionIsNotNull();
+
     List<Department> findByDivisionEquals(String division);
+
+    //Display top 3 departments with division name includes 'Hea', without duplicates
+    List<Department> findDistinctTop3ByDivisionContains(String pattern);
 }
