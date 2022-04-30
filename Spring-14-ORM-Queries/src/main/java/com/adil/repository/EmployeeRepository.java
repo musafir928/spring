@@ -3,6 +3,7 @@ package com.adil.repository;
 import com.adil.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,7 +13,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findByEmail(String email);
 
     //Display all employees with first name ' ' and last name ' ' , also show all employees with an email address
-    List<Employee> findByFirstNameAndLastNameOrEmail(String firstName,String lastName,String email);
+    List<Employee> findByFirstNameAndLastNameOrEmail(String firstName, String lastName, String email);
 
     //Display all employees that first name is not ' '
     List<Employee> findByFirstNameIsNot(String firstName);
@@ -49,7 +50,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     Optional<Employee> getEmployeeDetail(String email);
 
     @Query("SELECT e FROM Employee e WHERE e.email=?1 AND e.salary=?2")
-    Employee getEmployeeDetail(String email,int salary);
+    Employee getEmployeeDetail(String email, int salary);
 
     //Not Equal
     @Query("SELECT e FROM Employee e WHERE e.salary <> ?1 ")
@@ -73,7 +74,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     //Between
     @Query("SELECT e FROM Employee e WHERE e.salary BETWEEN ?1 AND ?2")
-    List<Employee> getEmployeeSalaryBetween(int salary1,int salary2);
+    List<Employee> getEmployeeSalaryBetween(int salary1, int salary2);
 
     //Null
     @Query("SELECT e FROM Employee e WHERE e.email IS NULL")
@@ -93,4 +94,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query(value = "SELECT * from employees where salary = ?1", nativeQuery = true)
     List<Employee> readEmployeeDetailBySalary(int salary);
+
+    @Query("select e from Employee e where e.salary = :salary")
+    List<Employee> getEmployeeSalary(@Param("salary") int salary);
 }
