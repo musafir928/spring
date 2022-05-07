@@ -4,11 +4,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Table(name="location")
 public class Location extends BaseEntity {
     private String name;
     private BigDecimal latitude;
