@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OfficeHours {
-    public int getHours () {
+    public int getHours() {
         return 5;
     }
 }

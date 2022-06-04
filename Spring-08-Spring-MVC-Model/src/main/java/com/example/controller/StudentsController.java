@@ -15,10 +15,10 @@ public class StudentsController {
     public String index(Model model) {
         // student object
         List<Student> students = Arrays.asList(
-                new Student(1,"Adil", "Ablimit", 35, Gender.MALE),
-                new Student(2,"Asiye", "Adil", 10, Gender.FEMALE),
-                new Student(3,"Maryam", "Adil", 8, Gender.FEMALE),
-                new Student(4,"Hediche", "Adil", 5, Gender.FEMALE)
+                new Student(1, "Adil", "Ablimit", 35, Gender.MALE),
+                new Student(2, "Asiye", "Adil", 10, Gender.FEMALE),
+                new Student(3, "Maryam", "Adil", 8, Gender.FEMALE),
+                new Student(4, "Hediche", "Adil", 5, Gender.FEMALE)
         );
         model.addAttribute("students", students);
 

@@ -4,7 +4,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Java {
-    public void getTeachingHours(){
+    public void getTeachingHours() {
         System.out.println("Teaching hours: 200/300");
-    };
+    }
+
+    ;
 }

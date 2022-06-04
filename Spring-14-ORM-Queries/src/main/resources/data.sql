@@ -25,7 +25,8 @@ VALUES ('Clothing', 'Home'),
        ('Movies', 'Entertainment'),
        ('Maintenance', 'Entertainment'),
        ('Plumbing', 'Entertainment'),
-       ('Security', 'Entertainment') ON CONFLICT DO NOTHING;
+       ('Security', 'Entertainment')
+ON CONFLICT DO NOTHING;
 
 INSERT INTO regions (id, region, country)
 VALUES (1, 'Southwest', 'United States'),
@@ -34,7 +35,8 @@ VALUES (1, 'Southwest', 'United States'),
        (4, 'Central', 'Asia'),
        (5, 'East Asia', 'Asia'),
        (6, 'Quebec', 'Canada'),
-       (7, 'Nova Scotia', 'Canada') ON CONFLICT DO NOTHING;
+       (7, 'Nova Scotia', 'Canada')
+ON CONFLICT DO NOTHING;
 
 INSERT INTO employees (id, first_name, last_name, email, hire_date, department, gender, salary, region_id)
 VALUES (1, 'Berrie', 'Manueau', 'bmanueau0@dion.ne.jp', '2006-04-20', 'Sports', 'F', 154864, 4),
@@ -1040,7 +1042,8 @@ VALUES (1, 'Berrie', 'Manueau', 'bmanueau0@dion.ne.jp', '2006-04-20', 'Sports', 
        (998, 'Brandice', 'Gillicuddy', 'bgillicuddyrp@adobe.com', '2014-11-30', 'Phones & Tablets', 'F', 134058, 2),
        (999, 'Kingston', 'Piwall', 'kpiwallrq@nyu.edu', '2012-07-07', 'Music', 'M', 45679, 7),
        (1000, 'Jacquelin', 'Cassam', 'jcassamrr@cam.ac.uk', '2010-01-27', 'Music', 'F', 28726,
-        2) ON CONFLICT DO NOTHING;
+        2)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO COURSES(NAME, CATEGORY, RATING, DESCRIPTION)
 VALUES ('Rapid Spring Boot Application Development', 'Spring', 4,

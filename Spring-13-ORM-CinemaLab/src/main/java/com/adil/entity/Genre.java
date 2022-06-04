@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class Genre extends BaseEntity{
+public class Genre extends BaseEntity {
     private String name;
 
     @ManyToMany(mappedBy = "genreList")

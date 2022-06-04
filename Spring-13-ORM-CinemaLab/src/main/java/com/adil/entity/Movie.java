@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class Movie<StateType> extends BaseEntity{
+public class Movie<StateType> extends BaseEntity {
     private String name;
     @Column(columnDefinition = "Date")
     private LocalDate releaseDate;
@@ -27,6 +27,6 @@ public class Movie<StateType> extends BaseEntity{
     private BigDecimal price;
 
     @ManyToMany
-    @JoinTable(name = "movie_genre_rel", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name="genre_id"))
+    @JoinTable(name = "movie_genre_rel", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList;
 }

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name="location")
+@Table(name = "location")
 public class Location extends BaseEntity {
     private String name;
     private BigDecimal latitude;

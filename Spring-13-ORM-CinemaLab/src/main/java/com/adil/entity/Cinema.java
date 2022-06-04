@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Cinema extends BaseEntity{
+public class Cinema extends BaseEntity {
     private String name;
     private String sponsoredName;
 

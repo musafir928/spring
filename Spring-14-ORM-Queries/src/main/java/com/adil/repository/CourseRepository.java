@@ -18,6 +18,7 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     // return count of the courses for the provided category
     int countByCategory(String category);
+
     int countCourseByCategory(String category);
 
     // find all courses by category and returns a stream

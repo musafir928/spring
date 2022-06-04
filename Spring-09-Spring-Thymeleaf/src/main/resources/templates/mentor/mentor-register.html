@@ -24,7 +24,7 @@
         <input type="radio" value="Female" th:field="*{gender}">Female<br>
 
         <label>Batch Number:</label>
-        <select th:field="*{batch}" >
+        <select th:field="*{batch}">
             <option th:each="b : ${batchList}" th:value="${b}" th:text="${b}"></option>
         </select> <br>
 

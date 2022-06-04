@@ -25,7 +25,8 @@
                                th:field="*{firstName}">
                         <div th:if="${#fields.hasErrors('firstName')}">
                             <ol>
-                                <li th:each="error: ${#fields.errors('firstName')}" th:text="${error}" class="text-danger"></li>
+                                <li th:each="error: ${#fields.errors('firstName')}" th:text="${error}"
+                                    class="text-danger"></li>
                             </ol>
                         </div>
                     </div>

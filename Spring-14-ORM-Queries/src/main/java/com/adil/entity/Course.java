@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "COURSES")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course{
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

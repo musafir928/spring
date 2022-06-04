@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "user_account")
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     private String email;
     private String password;
