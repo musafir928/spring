@@ -1,6 +1,6 @@
-package com.example.client;
+package com.cydeo.client;
 
-import com.example.dto.User;
+import com.cydeo.dto.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

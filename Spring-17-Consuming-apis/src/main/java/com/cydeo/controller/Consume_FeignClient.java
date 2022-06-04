@@ -1,8 +1,8 @@
-package com.example.controller;
+package com.cydeo.controller;
 
-import com.example.client.EmployeeClient;
-import com.example.client.UserClient;
-import com.example.dto.ResponseWrapper;
+import com.cydeo.client.EmployeeClient;
+import com.cydeo.client.UserClient;
+import com.cydeo.dto.ResponseWrapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
