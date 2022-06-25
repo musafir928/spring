@@ -19,6 +19,7 @@ public class LicenseController {
         this.licenseService = licenseService;
     }
 
+    @RolesAllowed({"ADMIN", "USER"})
     @GetMapping("/{licenseId}")
     public ResponseEntity<License> getLicense(@PathVariable("organizationId") Long organizationId, @PathVariable("licenseId") Long licenseId) throws Exception {
         License license = licenseService.getLicense(licenseId, organizationId);
@@ -31,11 +32,13 @@ public class LicenseController {
         return ResponseEntity.ok(licenseService.updateLicense(request));
     }
 
+    @RolesAllowed({"ADMIN", "USER"})
     @PostMapping
     public ResponseEntity<License> createLicense(@RequestBody License request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(licenseService.createLicense(request));
     }
 
+    @RolesAllowed({"ADMIN"})
     @DeleteMapping(value = "/{licenseId}")
     public ResponseEntity<String> deleteLicense(@PathVariable("licenseId") Long licenseId, @PathVariable String organizationId) throws Exception {
         return ResponseEntity.ok(licenseService.deleteLicense(licenseId));
