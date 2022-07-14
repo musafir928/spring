@@ -9,8 +9,9 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(WelcomeController.class)
 class WelcomeControllerTest {
@@ -20,30 +21,24 @@ class WelcomeControllerTest {
 
     @Test
     void welcome() throws Exception {
-
-        // call /welcome endpoint
-        // verify "welcome"
-
-        RequestBuilder request = MockMvcRequestBuilders.get("/welcome")
+        RequestBuilder request = MockMvcRequestBuilders
+                .get("/welcome")
                 .accept(MediaType.APPLICATION_JSON);
-
-        MvcResult result = mvc.perform(request).andReturn();
-        assertEquals(200, result.getResponse().getStatus());
-        assertEquals("welcome", result.getResponse().getContentAsString());
-
+        MvcResult mvcResult = mvc.perform(request).andReturn();
+        assertEquals(201, mvcResult.getResponse().getStatus());
+        assertEquals("welcome", mvcResult.getResponse().getContentAsString());
     }
 
+    // alternative way
     @Test
     void welcome2() throws Exception {
-
-        RequestBuilder request = MockMvcRequestBuilders.get("/welcome")
+        RequestBuilder request = MockMvcRequestBuilders
+                .get("/welcome")
                 .accept(MediaType.APPLICATION_JSON);
 
         mvc.perform(request)
                 .andExpect(status().isOk())
                 .andExpect(content().string("welcome"))
                 .andReturn();
-
     }
-
 }
